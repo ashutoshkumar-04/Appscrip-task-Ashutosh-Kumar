@@ -73,7 +73,7 @@ const ProductGrid = ({ filters }) => {
           <div key={product.id} className={styles.card}>
             <Image
               src={product.image}
-              alt={product.title} // Use product.title for better accessibility
+              alt={product.title}
               width={200}
               height={200}
             />
