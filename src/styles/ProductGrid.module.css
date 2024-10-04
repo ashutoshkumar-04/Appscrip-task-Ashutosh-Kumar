@@ -1,0 +1,54 @@
+.gridContainer {
+  text-align: center; /* Center align text */
+  margin-bottom: 40px; /* Add bottom margin for space */
+}
+
+.headerContainer {
+  padding: 20px; /* Add padding around the header and description */
+  background-color: #f8f8f8; /* Light background for separation */
+  border-radius: 8px; /* Rounded corners */
+  margin-bottom: 20px; /* Space between header and products */
+}
+
+.centeredTitle {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px; /* Space below the title */
+}
+
+.description {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px; /* Space below the description */
+}
+
+.sortOptions {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: flex-end; /* Align to the right */
+  align-items: center;
+}
+
+.sortOptions label {
+  margin-right: 10px;
+}
+
+.sortOptions select {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Ensure 3 products per row */
+  gap: 30px; /* Space between products */
+  margin-top: 20px;
+}
+
+.card {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 8px; /* Rounded corners for product cards */
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}

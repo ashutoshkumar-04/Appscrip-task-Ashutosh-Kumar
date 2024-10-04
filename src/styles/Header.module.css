@@ -1,0 +1,46 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #fff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  cursor: pointer;
+}
+
+.nav ul {
+  display: flex;
+  list-style: none;
+}
+
+.nav ul li {
+  margin-right: 30px;
+}
+
+.nav ul li a {
+  color: #333;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.nav ul li a:hover {
+  color: #000;
+  font-weight: 600;
+}
+
+.rightNav {
+  display: flex;
+  gap: 15px;
+}
+
+.rightNav a {
+  color: #333;
+  font-size: 16px;
+}
+
+.rightNav a:hover {
+  font-weight: 600;
+}
