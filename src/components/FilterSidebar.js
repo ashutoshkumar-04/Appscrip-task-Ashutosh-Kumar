@@ -3,17 +3,14 @@ import styles from "@/styles/FilterSidebar.module.css";
 
 const FilterSidebar = ({ onFilterChange }) => {
   const [customizable, setCustomizable] = useState(false);
-  const [idealFor, setIdealFor] = useState([]);
+  const [idealFor, setIdealFor] = useState("");
   const [occasion, setOccasion] = useState("");
   const [fabric, setFabric] = useState("");
+  const [suitableFor, setSuitableFor] = useState("");
 
   const handleIdealForChange = (value) => {
-    setIdealFor((prev) => {
-      if (prev.includes(value)) {
-        return prev.filter((item) => item !== value);
-      }
-      return [...prev, value];
-    });
+    setIdealFor(value);
+    handleFilterChange();
   };
 
   const handleFilterChange = () => {
@@ -22,6 +19,7 @@ const FilterSidebar = ({ onFilterChange }) => {
       idealFor,
       occasion,
       fabric,
+      suitableFor,
     });
   };
 
@@ -47,54 +45,19 @@ const FilterSidebar = ({ onFilterChange }) => {
           </label>
         </div>
       </div>
+
+      {/* New Filter for Ideal For */}
       <div className={styles.filterGroup}>
         <h4>Ideal For</h4>
-        <div className={styles.checkboxGroup}>
-          <input
-            type="checkbox"
-            id="men"
-            name="idealFor"
-            checked={idealFor.includes("Men")}
-            onChange={() => {
-              handleIdealForChange("Men");
-              handleFilterChange();
-            }}
-          />
-          <label className={styles.label} htmlFor="men">
-            {" "}
-            Men
-          </label>
-          <br />
-          <input
-            type="checkbox"
-            id="women"
-            name="idealFor"
-            checked={idealFor.includes("Women")}
-            onChange={() => {
-              handleIdealForChange("Women");
-              handleFilterChange();
-            }}
-          />
-          <label className={styles.label} htmlFor="women">
-            {" "}
-            Women
-          </label>
-          <br />
-          <input
-            type="checkbox"
-            id="kids"
-            name="idealFor"
-            checked={idealFor.includes("Kids")}
-            onChange={() => {
-              handleIdealForChange("Kids");
-              handleFilterChange();
-            }}
-          />
-          <label className={styles.label} htmlFor="kids">
-            {" "}
-            Baby & Kids
-          </label>
-        </div>
+        <select
+          value={idealFor}
+          onChange={(e) => handleIdealForChange(e.target.value)}
+        >
+          <option value="">Select Ideal For</option>
+          <option value="Men">Men</option>
+          <option value="Women">Women</option>
+          <option value="Baby & Kids">Baby & Kids</option>
+        </select>
       </div>
 
       {/* New Filter for Occasion */}
@@ -133,7 +96,23 @@ const FilterSidebar = ({ onFilterChange }) => {
         </select>
       </div>
 
-      {/* Add more filter sections as needed */}
+      {/* New Filter for Suitable For */}
+      <div className={styles.filterGroup}>
+        <h4>Suitable For</h4>
+        <select
+          value={suitableFor}
+          onChange={(e) => {
+            setSuitableFor(e.target.value);
+            handleFilterChange();
+          }}
+        >
+          <option value="">Select Suitable For</option>
+          <option value="Men">Men</option>
+          <option value="Women">Women</option>
+          <option value="Babies">Babies</option>
+          <option value="Kids">Kids</option>
+        </select>
+      </div>
     </aside>
   );
 };

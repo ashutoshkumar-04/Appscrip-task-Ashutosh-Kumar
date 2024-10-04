@@ -10,6 +10,9 @@ export default function Home() {
   const [filters, setFilters] = useState({
     customizable: false,
     idealFor: [],
+    occasion: "",
+    fabric: "",
+    suitableFor: "",
   });
 
   const handleFilterChange = (newFilters) => {

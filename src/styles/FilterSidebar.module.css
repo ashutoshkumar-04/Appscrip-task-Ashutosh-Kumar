@@ -21,8 +21,7 @@
   align-items: center;
 }
 
-.checkboxGroup input[type="checkbox"],
-.checkboxGroup input[type="radio"] {
+.checkboxGroup input[type="checkbox"] {
   margin-right: 10px;
 }
 
@@ -36,5 +35,5 @@
   border: 1px solid #ccc;
   border-radius: 4px;
   margin-top: 5px;
-  width: 100%;
+  width: 100%; /* Full width for aesthetics */
 }
