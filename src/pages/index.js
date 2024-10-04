@@ -9,7 +9,7 @@ import { useState } from "react";
 export default function Home() {
   const [filters, setFilters] = useState({
     customizable: false,
-    idealFor: [],
+    idealFor: "",
     occasion: "",
     fabric: "",
     suitableFor: "",

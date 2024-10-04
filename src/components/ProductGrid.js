@@ -57,13 +57,18 @@ const ProductGrid = ({ filters }) => {
           ones.
         </p>
       </div>
-      <div className={styles.sortOptions}>
-        <label htmlFor="sort">Sort by: </label>
-        <select id="sort" value={sortOption} onChange={handleSortChange}>
-          <option value="recommended">Recommended</option>
-          <option value="lowToHigh">Price: Low to High</option>
-          <option value="highToLow">Price: High to Low</option>
-        </select>
+      <div className={styles.filterProductContainer}>
+        <div className={styles.filterSidebar}>
+          {/* Placeholder for FilterSidebar - needs to be added in index.js */}
+        </div>
+        <div className={styles.sortOptions}>
+          <label htmlFor="sort">Sort by: </label>
+          <select id="sort" value={sortOption} onChange={handleSortChange}>
+            <option value="recommended">Recommended</option>
+            <option value="lowToHigh">Price: Low to High</option>
+            <option value="highToLow">Price: High to Low</option>
+          </select>
+        </div>
       </div>
       <div className={styles.grid}>
         {sortedProducts.map((product) => (
