@@ -10,11 +10,10 @@ const ProductGrid = ({ filters }) => {
     const fetchProducts = async () => {
       const response = await fetch("https://fakestoreapi.com/products");
       const data = await response.json();
-      // Map the products to include occasion and fabric for filtering
       const enhancedData = data.map((product) => ({
         ...product,
-        occasion: "Casual", // Sample data for filtering, update as needed
-        fabric: "Cotton", // Sample data for filtering, update as needed
+        occasion: "Casual",
+        fabric: "Cotton",
       }));
       setProducts(enhancedData);
     };
@@ -26,7 +25,6 @@ const ProductGrid = ({ filters }) => {
   };
 
   const filteredProducts = products.filter((product) => {
-    // Apply filters here based on the selected options
     if (filters.customizable && !product.customizable) return false;
     if (
       filters.idealFor.length > 0 &&
@@ -35,7 +33,7 @@ const ProductGrid = ({ filters }) => {
       return false;
     if (filters.occasion && product.occasion !== filters.occasion) return false;
     if (filters.fabric && product.fabric !== filters.fabric) return false;
-    return true; // Include the product if no filters are applied
+    return true;
   });
 
   const sortedProducts = [...filteredProducts].sort((a, b) => {
@@ -44,7 +42,7 @@ const ProductGrid = ({ filters }) => {
     } else if (sortOption === "highToLow") {
       return b.price - a.price;
     }
-    return 0; // default sorting (e.g., recommended)
+    return 0;
   });
 
   return (
@@ -59,7 +57,7 @@ const ProductGrid = ({ filters }) => {
       </div>
       <div className={styles.filterProductContainer}>
         <div className={styles.filterSidebar}>
-          {/* Placeholder for FilterSidebar - needs to be added in index.js */}
+          {/* Filter Sidebar Component */}
         </div>
         <div className={styles.sortOptions}>
           <label htmlFor="sort">Sort by: </label>
@@ -79,8 +77,9 @@ const ProductGrid = ({ filters }) => {
               width={200}
               height={200}
             />
-            <h3>{product.title}</h3> // Display product title instead of name
-            <p>Price: ${product.price}</p> // Display product price
+            <h3>{product.title}</h3>{" "}
+            {/* Display product title instead of name */}
+            <p>Price: ${product.price}</p> {/* Display product price */}
           </div>
         ))}
       </div>
